@@ -1,0 +1,6 @@
+|         类名         |          作用           |
+| :------------------: | :--------------------: |
+|   LoginController    | 包含有登录相关的请求接口 |
+| ManageUserController | 包含有用户管理相关的接口 |
+|  RegisterController  | 包含有用户注册相关接口   |
+|  UserItemController  |包含有面向用户的众筹项目接口 |
