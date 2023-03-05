@@ -1,0 +1,5 @@
+|      类名       |          说明           |
+| :-------------: | :---------------------: |
+|   ApiResponse   |   验证Token的返回信息   |
+| ApiResponseEnum | 验证Token的返回信息枚举 |
+|     Result      |      接口回复信息       |
