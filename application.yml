@@ -1,0 +1,48 @@
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.NonRegisteringDriver
+    url: jdbc:mysql://127.0.0.1:3306/funding_system?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: funding_system
+    password: 123123
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      filters: stat,wall
+      #指定每个连接上PSCache的大小
+      max-pool-prepared-statement-per-connection-size: 20
+      #合并多个DruidDataSource的监控数据
+      use-global-data-source-stat: true
+      #通过connectProperties属性来打开mergeSql功能；慢SQL记录
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  servlet:
+    multipart:
+      max-file-size: 1000MB
+      max-request-size: 1000MB
+server:
+  port: 8083
+logging:
+  level:
+    com.server: error
+file:
+  upload-path: D:\\yyyy\\wang\\
+
+### 七牛云信息
+qiniu:
+  accessKey: TLrtGhuxHN5WaCBBM9jPXDUoT4XzGEWwDNcuQtb6
+  secretKey: UvKARXvC8yJVQcvg3lOYEbUuHsbcT06PbvDGMBsh
+  bucket: bfskbc #空间名称
+  domain: http://rqubaps81.hn-bkt.clouddn.com/
+#  accessKey: RFFIX_9jBc-HshPgkVHgZAYPr7vzVEPbBHmoX-8s
+#  secretKey: JqZVGcrdGIaPcby0Bou2edIaDjs6l6vjDLGBEDY9
+#  bucket: xinanshan#空间名称
+#  domain: http://rqvrzg5lo.hn-bkt.clouddn.com/
